@@ -1,3 +1,7 @@
+// Numeric primitive types : int (integer), long (big integer), float (floating
+// number), double (floating number with more decimal places)
+// Boolean type : boolean
+// String type : String
 package tuto.variables;
 
 public class variables {
@@ -39,9 +43,6 @@ public class variables {
 		// :
 		percentageOfVowels = (float) numberOfVowels / (float) incomeText.length() * 100;
 		System.out.println("Il y a " + percentageOfVowels + "% de voyelles dans le texte saisi.");
-
-		// Numeric primitive types : int (integer), long (big integer), float (floating
-		// number), double (floating number with more decimal places)
 		// --------------------------------------------------------------------------
 
 		// in Java, constant variables are written upper case, with the key word "final"
