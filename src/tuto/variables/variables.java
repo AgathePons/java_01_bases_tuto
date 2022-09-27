@@ -8,7 +8,6 @@ package tuto.variables;
 public class variables {
 
 	public static void main(String[] args) {
-		// comment as usual
 		int agePerson = 25;
 		agePerson = 30;
 		agePerson = agePerson + 10;
