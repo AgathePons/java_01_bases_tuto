@@ -2,6 +2,7 @@
 // number), double (floating number with more decimal places)
 // Boolean type : boolean
 // String type : String
+// --------------------------------------------------------------------------
 package tuto.variables;
 
 public class variables {
