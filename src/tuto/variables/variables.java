@@ -57,6 +57,9 @@ public class variables {
 		numberOfSomething = 3;
 		System.out.println("I have " + numberOfSomething + " things :D");
 
+		// Boolean
+		boolean isAwesome = true;
+
 	}
 
 }
