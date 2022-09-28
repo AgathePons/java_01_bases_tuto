@@ -40,7 +40,7 @@ Numeric types:
 - `int`: integer
 - `long`: big integer
 - `float`: floating number
-- `double`: floating number with more decimal places
+- `double`: floating number with more decimal places (used by default for decimal numbers)
 
 Other types:
 
@@ -84,4 +84,19 @@ isdoingSomething = !isDoingSomething // => true
 
 ## String
 
-String is a special type because it is an **object**
+String is a special type because it is an **object**.  
+Strings can be concatenated:
+
+```java
+String firstCity = "New York";
+String secondCity = "Buenos Aires";
+String favorites = "These cities are " +firstCity+ " and "+secondCity;
+```
+
+It is also possible to concatenate strings and integers:
+
+```java
+int numberOfPets = 3;
+String secondCity = "Buenos Aires";
+String favorites = "These cities are " +firstCity+ " and "+secondCity;
+```

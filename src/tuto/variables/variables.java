@@ -15,6 +15,7 @@ public class variables {
 
 		int saving = 1000;
 		int income = 500;
+		float decimalNumber = 2;
 
 		// saving = saving + income / 5;
 		// += // -+ // *= // /*
@@ -23,11 +24,12 @@ public class variables {
 
 		// --------------------------------------------------------------------------
 		// Calculate the percent of vowels in a string :
-		String incomeText = new String("Some words, made with some letters");
+		// String incomeText = new String("Some words, made with some letters");
+		String incomeText = "Some words, made with some letters";
 		int numberOfVowels = 0;
-		double percentageOfVowels = 0.0;
+		double percentageOfVowels = 0;
 
-		System.out.println("number of letters: " + incomeText.length());
+		System.out.println("number of characters: " + incomeText.length());
 
 		for (int i = 0; i < incomeText.length(); i++) {
 			if (incomeText.charAt(i) == 'a' || incomeText.charAt(i) == 'e' || incomeText.charAt(i) == 'i'
@@ -60,6 +62,13 @@ public class variables {
 		// Boolean
 		boolean isAwesome = true;
 
+		// test concatenate many types
+		System.out.println("String: " + MYNAME + ". double: " + percentageOfVowels + ". integer: " + saving
+				+ ". float: " + decimalNumber + ". boolean: " + isAwesome);
+
+		String concatenedTypes = "String: " + MYNAME + ". double: " + percentageOfVowels + ". integer: " + saving
+				+ ". float: " + decimalNumber + ". boolean: " + isAwesome;
+		System.out.println(concatenedTypes);
 	}
 
 }
