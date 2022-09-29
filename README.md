@@ -149,7 +149,10 @@ can be used.
 
 ## Scope in Java
 
-Scopes in Java are similar to scope in JS.  
+Scopes in Java are similar to scope in JS. 
+
+### Scope, global and local variables
+ 
 The variables scope depends on the location where they are declared in the code. Each variable is available
 in the context where it has been declared (code bloc).
 
@@ -176,6 +179,93 @@ class Kitten {
         // cannot access to minuteToSleep
     }
 }
+```
+
+Here, `isSoCute` and `numberOfPatpatToGive` are **global** so they can be used anywhere in another code bloc.
+
+
+So it is possible to do so:
+
+```java
+Kitten myKitten = new Kitten();
+
+System.out.println("Miaou, give me " + myKitten.numberOfPatpatToGive + "pat pat!");
+
+myKitten.numberOfPatpatToGive = 0;
+System.out.println(myKitten.numberOfPatpatToGive); // 0
+```
+
+It can be dangerous and have side effect to let the possibility to modify these global variables.
+
+### Access control
+
+It is possible to control the access to variables or methods.
+
+```java
+public class MyClass {
+    public static void main(String[] args) {
+    
+        System.out.println(AccessTest.firstText); // OK
+        System.out.println(AccessTest.secondText); // KO
+        
+        AccessTest.firstMethod(); // OK
+        AccessTest.secondMethod(); // KO
+    }
+}
+
+class AccessTest {
+    public static String firstText = "Hello, I am public.";
+    private static String secondText = "Hello, I am private.";
+    
+    public static void firstMethod() {
+        System.out.println(secondText);
+    }
+    private static void secondMethod() {
+        System.out.println(secondText);
+    }
+}
+```
+
+The key words are:
+
+- **public**: available for all
+- **protected**: available for the package and its sub classes (if a class is extended in another package, 
+the other package can access the protected element)
+- **package-protected**: available only in the package where it is. It is the default parameter if
+nothing is specified. Because it is implicit and cannot be declared, and because Java is a wordy language 
+where we have to be very specific, the default `package protected` can be a an oversight of the dev who wrote 
+it, so it is usually never used, and Java dev prefer to always specify something else.
+- **private**: available only in its context
+
+An element contained into an other can have the same level of access control, or have a lower level.
+
+For example:
+
+```java
+class MyClass {
+    int numberOne = 1; // package-private by default
+    protected int numberTwo = 2; // protected is higher than MyClass, so it is converted to package-private
+    public boolean isSomething = true; // likewise for public
+    private String myString = "Hello!"; // private is lower than MyClass so it is private
+}
+```
+
+**Note**: A first level class cannot be `private` because that would mean the class just cannot be used, so it 
+is useless.
+
+When a variable from a class is declared, if the access control of the declaration context is higher than the 
+access control of the class called, so the variable **must have** an explicit level of access control equal or 
+lower than the class called.
+
+For example:
+
+```java
+private MyClass {
+    ...blablabla
+}
+
+MyClass firstClass = new MyClass(); // error
+private MyClass secondClass = new MyClass(); // OK
 ```
 
 
