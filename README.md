@@ -146,3 +146,37 @@ When a class is written, it has to be documented in **Javadoc** using `/** */`.
 Utility classes contain static methods that can be called directly on the class.  
 For example the class named `functions` of this project is an utility class, where the method `sayHelloTo` 
 can be used.
+
+## Scope in Java
+
+Scopes in Java are similar to scope in JS.  
+The variables scope depends on the location where they are declared in the code. Each variable is available
+in the context where it has been declared (code bloc).
+
+Variable scope can be **local** or **global** according to its location.  
+A **global** variable is available for all classes and methods of a program, whereas **local** variable is
+available only in the method where it is declared.
+
+For example:
+
+```java
+class Kitten {
+    static boolean isSoCute = true;
+    static int numberOfPatpatToGive = 10;
+    
+    public static void sleep() {
+        int minuteToSleep = 120;
+        // can access to isSoCute and numberOfPatpatToGive
+        // cannot access to minuteToPlay
+    }
+    
+    public static void play() {
+        int minuteToPlay = 30;
+        // can access to isSoCute and numberOfPatpatToGive
+        // cannot access to minuteToSleep
+    }
+}
+```
+
+
+--------------------------------------------
