@@ -268,5 +268,91 @@ MyClass firstClass = new MyClass(); // error
 private MyClass secondClass = new MyClass(); // OK
 ```
 
+## Loops in Java
+
+
+### Basic for loop
+
+As usual:
+
+```java
+for (int i = 0; i <= 5; i++) {
+    // do something
+}
+```
+
+Loop with collections:
+
+```java
+int[] myArray = new int[]{7,2,4};
+for (int i = 0; i < myArray.length; i++) {
+    System.out.println(myArray[i]);
+}
+```
+
+### Java for each loop
+
+```java
+for (int number: myArray) {
+    System.out.println(number);
+}
+```
+
+### Conditional loop
+
+Loop `while... true`.
+
+If the condition is false since the start, the `while... true` is never executed, because the condition is 
+checked first.
+
+```java
+int hugs = 0;
+while (hugs < 50) {
+    hugs = (int) (Math.random() * ((100 - 1) + 1) + 1);
+    System.out.println("Hugs received: " + hugs);
+}
+```
+
+Loop `do... while`.
+
+If the condition is false since the start, the `do... while` is executed at least once, because the `while` 
+condition is checked after the `do`.
+
+```java
+double randomNumber = (double) (Math.random());
+do {
+    randomNumber = (double) (Math.random());
+    System.out.println("Hourra!!");
+} while (randomNumber <= 0.5);
+```
+
+### The `continue` and `break` instructions
+
+Not to execute the instruction in some loops, it is possible to use the key word `continue` to switch directly 
+to the next loop.
+
+```java
+int numberToIgnore = 3;
+for (int i = 0; i < 10; i++) {
+    if (i == numberToIgnore) {
+        continue;
+    }
+    System.out.println("I have the number " + i);
+}
+```
+
+To stop the loop before its end, it is possible to use the key word `break` to exit the loop.
+
+```java
+int numberToFind = 4;
+for (int i = 0; i < 10; i++) {
+    if (i == numberToFind) {
+        System.out.println("I found a " + i);
+        break;
+    }
+    System.out.println("I search a " + numberToFind + " but I found a " + i);
+}
+```
+
 
 --------------------------------------------
