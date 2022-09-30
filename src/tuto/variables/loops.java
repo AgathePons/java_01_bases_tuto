@@ -5,6 +5,7 @@ public class loops {
 	public static void main(String[] args) {
 		giveHello();
 		giveNumbers();
+		giveAnimals();
 		giveHugs();
 		giveHourra();
 		ignoreNumber(3);
@@ -23,6 +24,14 @@ public class loops {
 		int[] myArray = new int[] { 7, 2, 4 };
 		for (int i = 0; i < myArray.length; i++) {
 			System.out.println(myArray[i]);
+		}
+	}
+
+	private static void giveAnimals() {
+		// on iterable
+		String[] myArray = new String[] { "kitten", "puppy", "bunny" };
+		for (String animal : myArray) {
+			System.out.println(animal);
 		}
 	}
 

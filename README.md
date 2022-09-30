@@ -354,5 +354,42 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
+## Conditions
+
+### If / else
+
+As usual:
+
+```java
+if (isTrue) {
+    doSomething();
+}
+else {
+    doSomethingElse();
+}
+```
+
+It is possible to use `else if` for multiple cases.
+
+### Switch 
+
+As usual
+
+```java
+switch(onSometing) {
+    case firstThing:
+        doSomething();
+        break;
+    case secondThing:
+        doSomethingElse();
+        break;
+    case thirdThing:
+        doOtherThing();
+        break;
+    default:
+        doDefaultThing();
+}
+```
+
 
 --------------------------------------------
