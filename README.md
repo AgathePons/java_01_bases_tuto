@@ -391,5 +391,50 @@ switch(onSometing) {
 }
 ```
 
+### The `enum` type in Java
+
+The enum is a list of defined cases. It can help to decrease the chance of error.
+
+It is declared as follow:
+
+```java
+enum Direction {
+    north, east, south, west;
+}
+```
+
+Then, it is possible to cover all cases (so `default` is not required):
+
+```java
+Direction direction = Direction.north;
+switch (direction) {
+    case north:
+        System.out.println("You are heading north");
+        break;
+    case east:
+        System.out.println("You are heading east");
+        break;
+    case south:
+        System.out.println("You are heading south");
+        break;
+    case west:
+        System.out.println("You are heading west");
+        break;
+}
+```
+
+Or define just one or more cases (so `default` is required):
+
+```java
+Direction direction = Direction.north;
+switch (direction) {
+    case north:
+        System.out.println("You are heading north");
+        break;
+    default:
+        System.out.println("You are lost");
+```
+
+
 
 --------------------------------------------
